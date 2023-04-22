@@ -3,13 +3,13 @@
 using namespace std;
 
 #define TaiwanTapWater 0.167 // every m^3
-#define PrivateCar 0.3015 // (gasoline) every person
+#define PrivateCar 0.3015 *30// (gasoline) every person
 #define TaiwanEletricity 0.6 //every kwh
-#define SchoolLanuch 1.5 // every person
-#define Bus 1.26 // (diesel) every km
-#define Dormitory 15.02 // every person
-#define MortorBike 0.150; //every person
-#define GreenSpace -20; // every m^2
+#define SchoolLanuch 1.5*30 // every person
+#define Bus 1.26 *30 // (diesel) every km
+#define Dormitory 15.02 *30// every person
+#define MortorBike 0.150 *30 //every person
+
 
 double CarbonSum = 0; //碳足跡總量
 
@@ -19,7 +19,7 @@ double Eletricity_kwh;
 double PrivateCar_person;
 double MortorBike_person;
 double Dormitory_person;
-double GreenSpace_mm;
+
 
 void Clear()  //清除terminal中的文字]
 {
@@ -51,9 +51,7 @@ double Carbon_dormitory(double Dormitory_person) {
     return Dormitory_person * Dormitory;
 }
 
-double Carbon_GreenSpace(double GreenSpace_mm) {
-    return GreenSpace_mm * GreenSpace;
-}
+
 
 
 int main()
@@ -90,10 +88,7 @@ int main()
     CarbonSum += Carbon_dormitory(Dormitory_person);
     Clear();
 
-    cout << "綠地面積(平方公尺):\n";
-    cin >> GreenSpace_mm;
-    CarbonSum += Carbon_GreenSpace(GreenSpace_mm);
-    Clear();
+    
 
     cout << "總碳足跡是:" << CarbonSum << "Kg" << endl;
 
