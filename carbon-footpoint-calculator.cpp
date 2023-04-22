@@ -1,4 +1,4 @@
-﻿
+#include<windows.h>
 #include <iostream>
 using namespace std;
 
@@ -57,7 +57,9 @@ double Carbon_GreenSpace(double GreenSpace_mm) {
 
 
 int main()
-{
+{   
+    SetConsoleOutputCP(65001);
+    
     cout << "一個月用水量(度):\n";
     cin >> TapWater_mmm;
     CarbonSum += Carbon_TaiwanTapWater(TapWater_mmm);
