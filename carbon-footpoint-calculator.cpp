@@ -1,4 +1,5 @@
-#include <iostream>
+#include<Windows.h>
+#include<iostream>
 using namespace std;
 
 #define TaiwanTapWater 0.167 // every m^3
