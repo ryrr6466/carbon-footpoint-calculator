@@ -7,7 +7,7 @@ using namespace std;
 #define TaiwanEletricity 0.6 //every kwh
 #define Bus 1.26 *30// (diesel) every km
 #define Dormitory 15.02 *30 // every person
-#define MortorBike 0.150 *30 //every person
+#define MortorBike 0.150 *30 //every perso
 
 
 double CarbonSum = 0; //碳足跡總量
