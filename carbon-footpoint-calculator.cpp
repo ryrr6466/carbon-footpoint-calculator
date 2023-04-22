@@ -1,4 +1,4 @@
-#include<Windows.h>
+#include <Windows.h>
 #include <iostream>
 using namespace std;
 
@@ -7,11 +7,9 @@ using namespace std;
 #define TaiwanEletricity 0.6 //every kwh
 #define Bus 1.26 *30// (diesel) every km
 #define Dormitory 15.02 *30 // every person
-#define MortorBike 0.150 *30 //every perso
-
+#define MortorBike 0.150 *30 //every person
 
 double CarbonSum = 0; //碳足跡總量
-
 double TapWater_mmm;
 double Bus_km;
 double Eletricity_kwh;
@@ -51,7 +49,6 @@ double Carbon_dormitory(double Dormitory_person) {
 }
 
 
-
 int main()
 {   
     SetConsoleOutputCP(65001);
@@ -86,7 +83,6 @@ int main()
     CarbonSum += Carbon_dormitory(Dormitory_person);
     Clear();
 
-   
     cout << "總碳足跡是:" << CarbonSum << "Kg" << endl;
 
     system("pause");
