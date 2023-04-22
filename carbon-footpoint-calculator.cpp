@@ -95,7 +95,7 @@ int main()
     CarbonSum += Carbon_GreenSpace(GreenSpace_mm);
     Clear();
 
-    cout << "總碳足跡是:" << CarbonSum << "m^3" << endl;
+    cout << "總碳足跡是:" << CarbonSum << "Kg" << endl;
 
     system("pause");
     return 0;
