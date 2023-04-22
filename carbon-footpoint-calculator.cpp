@@ -1,4 +1,4 @@
-#include<windows.h>
+
 #include <iostream>
 using namespace std;
 
@@ -18,7 +18,7 @@ double Eletricity_kwh;
 double PrivateCar_person;
 double MortorBike_person;
 double Dormitory_person;
-double GreenSpace_mm;
+
 
 void Clear()  //清除terminal中的文字]
 {
