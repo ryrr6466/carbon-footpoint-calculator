@@ -18,5 +18,19 @@
     <ClCompile Include="carbon-footpoint-calculator.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="carbon_calculate.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="clear.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="carbon_calculate.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="clear.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
