@@ -2,7 +2,6 @@
 #include<iostream>
 #include"carbon_calculate.h"
 #include"clear.h"
-#include<string>
 #define TaiwanTapWater 0.167 // every m^3
 #define PrivateCar 0.3015 *30 // (gasoline) every person
 #define TaiwanEletricity 0.6 //every kwh
