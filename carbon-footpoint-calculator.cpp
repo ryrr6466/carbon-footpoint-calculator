@@ -85,12 +85,12 @@ int main()
             clear.Clear();
 
             cout << "\x1B[33mcarbon footpoint calculator\x1b[0m" << endl << endl;
-            cout << "\x1B[36m一個月用水量(度):" << Ccal.TapWater_mmm<<"*" <<TaiwanTapWater<< endl;
-            cout << "\x1B[36m一個月用電量(度):" << Ccal.Eletricity_kwh << "*" << TaiwanEletricity << endl;
-            cout << "\x1B[36m家用小客車通勤人數:" << Ccal.PrivateCar_person << "*" << PrivateCar << endl;
-            cout << "\x1B[36m機車通勤人數:" << Ccal.MortorBike_person << "*" << MortorBike << endl;
-            cout << "\x1B[36m校車路線總里程數:" << Ccal.Bus_km << "*" << Bus << endl;
-            cout << "\x1B[36m住宿人數:" << Ccal.Dormitory_person << "*" << Dormitory<< endl;
+            cout << "\x1B[36m一個月用水量(度):" << Ccal.TapWater_mmm<<"*" <<TaiwanTapWater<<"="<< Ccal.TapWater_mmm*TaiwanTapWater << endl;
+            cout << "\x1B[36m一個月用電量(度):" << Ccal.Eletricity_kwh << "*" << TaiwanEletricity << "="<<Ccal.Eletricity_kwh*TaiwanEletricity << endl;
+            cout << "\x1B[36m家用小客車通勤人數:" << Ccal.PrivateCar_person << "*" << PrivateCar << "="<<Ccal.PrivateCar_person*PrivateCar << endl;
+            cout << "\x1B[36m機車通勤人數:" << Ccal.MortorBike_person << "*" << MortorBike << "=" <<Ccal.MortorBike_person*MortorBike<< endl;
+            cout << "\x1B[36m校車路線總里程數:" << Ccal.Bus_km << "*" << Bus << "=" <<Ccal.Bus_km*Bus<< endl;
+            cout << "\x1B[36m住宿人數:" << Ccal.Dormitory_person << "*" << Dormitory << "=" <<Ccal.Dormitory_person*Dormitory<< endl;
             cout << "\x1B[32m總碳足跡是:" << CarbonSum << "Kg" << endl;
 
             cout << "\x1B[31m-y again\t-n close:";
