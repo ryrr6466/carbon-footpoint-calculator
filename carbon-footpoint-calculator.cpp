@@ -22,7 +22,7 @@ int main()
     carbon_calculate Ccal;
     clear clear;
 
-    cout << "\x1B[33mcarbon footpoint calculator\x1b[0m" << endl << endl;
+    cout << "\x1B[33mcarbon footpoint calculator" << endl << endl;
     cout << "\x1B[31mwelcome to the carbon foootpoint calculator"<<endl;
     system("pause");
     clear.Clear();
