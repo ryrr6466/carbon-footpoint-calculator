@@ -2,16 +2,8 @@
 #include<iostream>
 #include"carbon_calculate.h"
 #include"clear.h"
-#define TaiwanTapWater 0.167 // every m^3
-#define PrivateCar 0.3015 *30 // (gasoline) every person
-#define TaiwanEletricity 0.6 //every kwh
-#define Bus 1.26 *30// (diesel) every km
-#define Dormitory 15.02 *30 // every person
-#define MortorBike 0.150 *30 //every person
 
 using namespace std;
-
-
 
 int main()
 {   
@@ -19,8 +11,8 @@ int main()
     double CarbonSum = 0; //碳足跡總量
     char EndControl;
 
-    carbon_calculate Ccal;
-    clear clear;
+    carbon_calculate Ccal; //class: carbon_calculate
+    clear clear;  //class : clear
 
     cout << "\x1B[33mcarbon footpoint calculator" << endl << endl;
     cout << "\x1B[31mwelcome to the carbon foootpoint calculator"<<endl;
@@ -30,9 +22,8 @@ int main()
     while (true) {
         CarbonSum = 0;
         clear.Clear();
+        
         cout   << "\x1B[33mcarbon footpoint calculator\x1b[0m" << endl << endl;
-
-
         cout << "\x1B[36m一個月用水量(度):";
         cin >> Ccal.TapWater_mmm;
         CarbonSum += Ccal.Carbon_TaiwanTapWater(Ccal.TapWater_mmm);
@@ -75,40 +66,39 @@ int main()
         cout << "\x1B[31m-y again\t-n close\t-d show detail:";
         cin >> EndControl;
 
-        if (EndControl == 'y') {
-            continue;
-        }
-        else  if(EndControl == 'n') {
-            break;
-        }
-        else if (EndControl == 'd') {
+        if (EndControl == 'y') continue;   //again         
+        
+        else if (EndControl == 'd') {  //show detail
             clear.Clear();
-
             cout << "\x1B[33mcarbon footpoint calculator\x1b[0m" << endl << endl;
-            cout << "\x1B[36m一個月用水量(度):" << Ccal.TapWater_mmm<<"*" <<TaiwanTapWater<<"="<< Ccal.TapWater_mmm*TaiwanTapWater << endl;
-            cout << "\x1B[36m一個月用電量(度):" << Ccal.Eletricity_kwh << "*" << TaiwanEletricity << "="<<Ccal.Eletricity_kwh*TaiwanEletricity << endl;
-            cout << "\x1B[36m家用小客車通勤人數:" << Ccal.PrivateCar_person << "*" << PrivateCar << "="<<Ccal.PrivateCar_person*PrivateCar << endl;
-            cout << "\x1B[36m機車通勤人數:" << Ccal.MortorBike_person << "*" << MortorBike << "=" <<Ccal.MortorBike_person*MortorBike<< endl;
-            cout << "\x1B[36m校車路線總里程數:" << Ccal.Bus_km << "*" << Bus << "=" <<Ccal.Bus_km*Bus<< endl;
-            cout << "\x1B[36m住宿人數:" << Ccal.Dormitory_person << "*" << Dormitory << "=" <<Ccal.Dormitory_person*Dormitory<< endl;
+            cout << "\x1B[36m一個月用水量(度):" << Ccal.TapWater_mmm << "*" << Ccal.TaiwanTapWater << "=" << Ccal.Carbon_TaiwanTapWater(Ccal.TapWater_mmm) << endl;
+            cout << "\x1B[36m一個月用電量(度):" << Ccal.Eletricity_kwh << "*" << Ccal.TaiwanEletricity << "=" << Ccal.Carbon_TaiwanEletricity(Ccal.Eletricity_kwh) << endl;
+            cout << "\x1B[36m家用小客車通勤人數:" << Ccal.PrivateCar_person << "*" << Ccal.PrivateCar << "=" << Ccal.Carbon_PrivateCar(Ccal.PrivateCar_person) << endl;
+            cout << "\x1B[36m機車通勤人數:" << Ccal.MortorBike_person << "*" << Ccal.MortorBike << "=" << Ccal.Carbon_Mortorbike(Ccal.MortorBike_person) << endl;
+            cout << "\x1B[36m校車路線總里程數:" << Ccal.Bus_km << "*" << Ccal.Bus << "=" << Ccal.Carbon_Bus(Ccal.Bus_km) << endl;
+            cout << "\x1B[36m住宿人數:" << Ccal.Dormitory_person << "*" << Ccal.Dormitory << "=" << Ccal.Carbon_dormitory(Ccal.Dormitory_person) << endl;
             cout << "\x1B[32m總碳足跡是:" << CarbonSum << "Kg" << endl;
 
             cout << "\x1B[31m-y again\t-n close:";
             cin >> EndControl;
 
-            if (EndControl == 'y') {
-                continue;
-            }
-            else {
-                break;
-            }
-
-        }
-        else {
-            break;
-        }
+            if (EndControl == 'y') continue;//again
             
-    }
-       
+            else {                
+                clear.Clear();
+                cout << "\x1B[33mcarbon footpoint calculator\x1b[0m" << endl << endl;
+                cout << "\x1B[31msee you next time!" << endl;
+                system("pause");
+                break;  //close 
+            }           
+        }
+        else {            
+            clear.Clear();
+            cout << "\x1B[33mcarbon footpoint calculator\x1b[0m" << endl << endl;
+            cout << "\x1B[31msee you next time!"<<endl;
+            system("pause");
+            break;  //close 
+        }
+    }   
     return 0;
 }
