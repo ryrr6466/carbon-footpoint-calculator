@@ -8,7 +8,7 @@ public:
 	const double PrivateCar  = 0.3015 * 30; // (gasoline) every person
 	const double TaiwanEletricity = 0.6; //every kwh
 	const double Bus = 1.26 * 30;// (diesel) every km
-	const double Dormitory = 15.02 * 30; // every person
+	const double Dormitory = 15.02 * 10; // every person
 	const double MortorBike = 0.150 * 30; //every person 
 
 	double TapWater_mmm;
