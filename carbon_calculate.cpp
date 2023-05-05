@@ -29,3 +29,7 @@ double carbon_calculate::Carbon_Mortorbike(double MortorBike_person)
 {
     return MortorBike_person * MortorBike;
 }
+double carbon_calculate::Carbon_PersonAtSchool(double PersonAtSchool_person)
+{
+    return PersonAtSchool_person * PersonAtSchool;
+}

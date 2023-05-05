@@ -10,6 +10,7 @@ public:
 	const double Bus = 1.26 * 30;// (diesel) every km
 	const double Dormitory = 15.02 * 10; // every person
 	const double MortorBike = 0.150 * 30; //every person 
+	const double PersonAtSchool = 19.6 / 24 * 10;//every person
 
 	double TapWater_mmm;
 	double Bus_km;
@@ -17,12 +18,14 @@ public:
 	double PrivateCar_person;
 	double MortorBike_person;
 	double Dormitory_person;
+	double PersonAtSchool_person;
 
 	double Carbon_TaiwanTapWater(double TapWater_mmm);
 	double Carbon_TaiwanEletricity(double Eletricity_kwh);
 	double Carbon_Bus(double Bus_km);
 	double Carbon_dormitory(double Dormitory_person);
 	double Carbon_PrivateCar(double PrivateCar_person);
-	double Carbon_Mortorbike(double MortorBike_person);		
+	double Carbon_Mortorbike(double MortorBike_person);
+	double Carbon_PersonAtSchool(double PerAtschool_person);
 };
 
