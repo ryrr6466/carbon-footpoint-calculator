@@ -65,6 +65,12 @@ int main()
         CarbonSum += Ccal.Carbon_dormitory(Ccal.Dormitory_person);
         clear.Clear();
 
+        cout << "\x1B[33mcarbon footpoint calculator\x1b[0m" << endl << endl;
+        cout << "\x1B[36m綠地面積(平方公尺):";
+        cin >> Ccal.GreenPlace_mm;
+        CarbonSum -= Ccal.Carbon_GreenPlace(Ccal.GreenPlace_mm);
+        clear.Clear();
+
         
         cout << "\x1B[33mcarbon footpoint calculator\x1b[0m" << endl << endl;
         cout << "\x1B[32m總碳足跡是:" << CarbonSum << "Kg\x1b[0m" << endl << endl;
@@ -84,6 +90,7 @@ int main()
             cout << "\x1B[36m機車通勤人數:" << Ccal.MortorBike_person << "*" << Ccal.MortorBike << "=" << Ccal.Carbon_Mortorbike(Ccal.MortorBike_person) << endl;
             cout << "\x1B[36m校車路線總里程數:" << Ccal.Bus_km << "*" << Ccal.Bus << "=" << Ccal.Carbon_Bus(Ccal.Bus_km) << endl;
             cout << "\x1B[36m住宿人數:" << Ccal.Dormitory_person << "*" << Ccal.Dormitory << "=" << Ccal.Carbon_dormitory(Ccal.Dormitory_person) << endl;
+            cout << "\x1B[36綠地吸碳量" << Ccal.GreenPlace_mm << "*-" << Ccal.GreenPlace << "=" << Ccal.Carbon_GreenPlace(Ccal.GreenPlace_mm) << endl;
             cout << "\x1B[32m總碳足跡是:" << CarbonSum << "Kg" << endl;
 
             cout << "\x1B[31m-y again\t-n close:";

@@ -33,3 +33,7 @@ double carbon_calculate::Carbon_PersonAtSchool(double PersonAtSchool_person)
 {
     return PersonAtSchool_person * PersonAtSchool;
 }
+double carbon_calculate::Carbon_GreenPlace(double GreenPlace_mm)
+{
+    return GreenPlace_mm * GreenPlace;
+}
