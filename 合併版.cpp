@@ -14,7 +14,7 @@ public:
 	const double Dormitory = 15.02 * 10; // every person
 	const double MortorBike = 0.150 * 30; //every person 
 	const double PersonAtSchool = 19.6 / 24 * 10;//every person
-	const double GreenPlace = 1.15 / 365 * 30;
+	const double GreenPlace = -(1.15 / 365 * 30);
 
 	double TapWater_mmm;
 	double Bus_km;
@@ -77,7 +77,7 @@ double carbon_calculate::Carbon_GreenPlace(double GreenPlace_mm)
 int main()
 {   
     
-    double CarbonSum = 0; //∫“®¨∏Ò¡`∂q
+    double CarbonSum = 0; //Á¢≥Ë∂≥Ë∑°Á∏ΩÈáè
     char EndControl;
 
     carbon_calculate Ccal; //class: carbon_calculate
@@ -92,56 +92,56 @@ int main()
         system("cls");
         
         cout   << "\x1B[33mcarbon footpoint calculator\x1b[0m" << endl << endl;
-        cout << "\x1B[36m§@≠”§Î•Œ§Ù∂q(´◊):";
+        cout << "\x1B[36m‰∏ÄÂÄãÊúàÁî®Ê∞¥Èáè(Â∫¶):";
         cin >> Ccal.TapWater_mmm;
         CarbonSum += Ccal.Carbon_TaiwanTapWater(Ccal.TapWater_mmm);
         system("cls");
 
         cout << "\x1B[33mcarbon footpoint calculator\x1b[0m" << endl << endl;
-        cout << "\x1B[36m§@≠”§Î•Œπq∂q(´◊):";
+        cout << "\x1B[36m‰∏ÄÂÄãÊúàÁî®ÈõªÈáè(Â∫¶):";
         cin >> Ccal.Eletricity_kwh;
         CarbonSum += Ccal.Carbon_TaiwanEletricity(Ccal.Eletricity_kwh);
         system("cls");
 
         cout << "\x1B[33mcarbon footpoint calculator\x1b[0m" << endl << endl;
-        cout << "\x1B[36mæ«Æ’§Hº∆:";
+        cout << "\x1B[36mÂ≠∏Ê†°‰∫∫Êï∏:";
         cin >> Ccal.PersonAtSchool_person;
         CarbonSum += Ccal.Carbon_PersonAtSchool(Ccal.PersonAtSchool_person);
         system("cls");
 
         cout << "\x1B[33mcarbon footpoint calculator\x1b[0m" << endl << endl;
-        cout << "\x1B[36mÆa•Œ§p´»®Æ≥q∂‘§Hº∆:";
+        cout << "\x1B[36mÂÆ∂Áî®Â∞èÂÆ¢ËªäÈÄöÂã§‰∫∫Êï∏:";
         cin >> Ccal.PrivateCar_person;
         CarbonSum += Ccal.Carbon_PrivateCar(Ccal.PrivateCar_person);
         system("cls");
 
         cout << "\x1B[33mcarbon footpoint calculator\x1b[0m" << endl << endl;
-        cout << "\x1B[36mæ˜®Æ≥q∂‘§Hº∆:";
+        cout << "\x1B[36mÊ©üËªäÈÄöÂã§‰∫∫Êï∏:";
         cin >> Ccal.MortorBike_person;
         CarbonSum += Ccal.Carbon_Mortorbike(Ccal.MortorBike_person);
         system("cls");
 
         cout << "\x1B[33mcarbon footpoint calculator\x1b[0m" << endl << endl;
-        cout << "\x1B[36mÆ’®Æ∏ÙΩu¡`®Ωµ{º∆:";
+        cout << "\x1B[36mÊ†°ËªäË∑ØÁ∑öÁ∏ΩÈáåÁ®ãÊï∏:";
         cin >> Ccal.Bus_km;
         CarbonSum += Ccal.Carbon_Bus(Ccal.Bus_km);
         system("cls");
 
         cout << "\x1B[33mcarbon footpoint calculator\x1b[0m" << endl << endl;
-        cout << "\x1B[36m¶Ì±J§Hº∆:";
+        cout << "\x1B[36m‰ΩèÂÆø‰∫∫Êï∏:";
         cin >> Ccal.Dormitory_person;
         CarbonSum += Ccal.Carbon_dormitory(Ccal.Dormitory_person);
         system("cls");
 
         cout << "\x1B[33mcarbon footpoint calculator\x1b[0m" << endl << endl;
-        cout << "\x1B[36m∫Ò¶a≠±øn(•≠§Ë§Ω§ÿ):";
+        cout << "\x1B[36mÁ∂†Âú∞Èù¢Á©ç(Âπ≥ÊñπÂÖ¨Â∞∫):";
         cin >> Ccal.GreenPlace_mm;
-        CarbonSum -= Ccal.Carbon_GreenPlace(Ccal.GreenPlace_mm);
+        CarbonSum += Ccal.Carbon_GreenPlace(Ccal.GreenPlace_mm);
         system("cls");
 
         
         cout << "\x1B[33mcarbon footpoint calculator\x1b[0m" << endl << endl;
-        cout << "\x1B[32m¡`∫“®¨∏Ò¨O:" << CarbonSum << "Kg\x1b[0m" << endl << endl;
+        cout << "\x1B[32mÁ∏ΩÁ¢≥Ë∂≥Ë∑°ÊòØ:" << CarbonSum << "Kg\x1b[0m" << endl << endl;
 
         cout << "\x1B[31m-y again\t-n close\t-d show detail:";
         cin >> EndControl;
@@ -151,15 +151,15 @@ int main()
         else if (EndControl == 'd') {  //show detail
             system("cls");
             cout << "\x1B[33mcarbon footpoint calculator\x1b[0m" << endl << endl;
-            cout << "\x1B[36m§@≠”§Î•Œ§Ù∂q(´◊):" << Ccal.TapWater_mmm << "*" << Ccal.TaiwanTapWater << "=" << Ccal.Carbon_TaiwanTapWater(Ccal.TapWater_mmm) << endl;
-            cout << "\x1B[36m§@≠”§Î•Œπq∂q(´◊):" << Ccal.Eletricity_kwh << "*" << Ccal.TaiwanEletricity << "=" << Ccal.Carbon_TaiwanEletricity(Ccal.Eletricity_kwh) << endl;
-            cout << "\x1B[36æ«Æ’¡`§Hº∆:" << Ccal.PersonAtSchool_person << "*" << Ccal.PersonAtSchool << "=" << Ccal.Carbon_PersonAtSchool(Ccal.PersonAtSchool_person) << endl;
-            cout << "\x1B[36mÆa•Œ§p´»®Æ≥q∂‘§Hº∆:" << Ccal.PrivateCar_person << "*" << Ccal.PrivateCar << "=" << Ccal.Carbon_PrivateCar(Ccal.PrivateCar_person) << endl;
-            cout << "\x1B[36mæ˜®Æ≥q∂‘§Hº∆:" << Ccal.MortorBike_person << "*" << Ccal.MortorBike << "=" << Ccal.Carbon_Mortorbike(Ccal.MortorBike_person) << endl;
-            cout << "\x1B[36mÆ’®Æ∏ÙΩu¡`®Ωµ{º∆:" << Ccal.Bus_km << "*" << Ccal.Bus << "=" << Ccal.Carbon_Bus(Ccal.Bus_km) << endl;
-            cout << "\x1B[36m¶Ì±J§Hº∆:" << Ccal.Dormitory_person << "*" << Ccal.Dormitory << "=" << Ccal.Carbon_dormitory(Ccal.Dormitory_person) << endl;
-            cout << "\x1B[36∫Ò¶aßl∫“∂q" << Ccal.GreenPlace_mm << "*-" << Ccal.GreenPlace << "=" << Ccal.Carbon_GreenPlace(Ccal.GreenPlace_mm) << endl;
-            cout << "\x1B[32m¡`∫“®¨∏Ò¨O:" << CarbonSum << "Kg" << endl;
+            cout << "\x1B[36m‰∏ÄÂÄãÊúàÁî®Ê∞¥Èáè(Â∫¶):" << Ccal.TapWater_mmm << "*" << Ccal.TaiwanTapWater << "=" << Ccal.Carbon_TaiwanTapWater(Ccal.TapWater_mmm) << endl;
+            cout << "\x1B[36m‰∏ÄÂÄãÊúàÁî®ÈõªÈáè(Â∫¶):" << Ccal.Eletricity_kwh << "*" << Ccal.TaiwanEletricity << "=" << Ccal.Carbon_TaiwanEletricity(Ccal.Eletricity_kwh) << endl;
+            cout << "\x1B[36Â≠∏Ê†°Á∏Ω‰∫∫Êï∏:" << Ccal.PersonAtSchool_person << "*" << Ccal.PersonAtSchool << "=" << Ccal.Carbon_PersonAtSchool(Ccal.PersonAtSchool_person) << endl;
+            cout << "\x1B[36mÂÆ∂Áî®Â∞èÂÆ¢ËªäÈÄöÂã§‰∫∫Êï∏:" << Ccal.PrivateCar_person << "*" << Ccal.PrivateCar << "=" << Ccal.Carbon_PrivateCar(Ccal.PrivateCar_person) << endl;
+            cout << "\x1B[36mÊ©üËªäÈÄöÂã§‰∫∫Êï∏:" << Ccal.MortorBike_person << "*" << Ccal.MortorBike << "=" << Ccal.Carbon_Mortorbike(Ccal.MortorBike_person) << endl;
+            cout << "\x1B[36mÊ†°ËªäË∑ØÁ∑öÁ∏ΩÈáåÁ®ãÊï∏:" << Ccal.Bus_km << "*" << Ccal.Bus << "=" << Ccal.Carbon_Bus(Ccal.Bus_km) << endl;
+            cout << "\x1B[36m‰ΩèÂÆø‰∫∫Êï∏:" << Ccal.Dormitory_person << "*" << Ccal.Dormitory << "=" << Ccal.Carbon_dormitory(Ccal.Dormitory_person) << endl;
+            cout << "\x1B[36Á∂†Âú∞Âê∏Á¢≥Èáè" << Ccal.GreenPlace_mm << "*" << Ccal.GreenPlace << "=" << Ccal.Carbon_GreenPlace(Ccal.GreenPlace_mm) << endl;
+            cout << "\x1B[32mÁ∏ΩÁ¢≥Ë∂≥Ë∑°ÊòØ:" << CarbonSum << "Kg" << endl;
 
             cout << "\x1B[31m-y again\t-n close:";
             cin >> EndControl;
