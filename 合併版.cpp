@@ -13,8 +13,10 @@ public:
 	const double Bus = 1.26 * 30;// (diesel) every km
 	const double Dormitory = 15.02 * 10; // every person
 	const double MortorBike = 0.150 * 30; //every person 
-	const double PersonAtSchool = 19.6 / 24 * 10;//every person
+	const double PersonAtSchool = 19.6 / 24 * 10*25/6*1.5/2/1.75;//every person
 	const double GreenPlace = -(1.15 / 365 * 30);
+	const double Classroom = 0.2*25*24;
+	const double Peoplemin = 3.4;//only food and water
 
 	double TapWater_mmm;
 	double Bus_km;
@@ -24,6 +26,7 @@ public:
 	double Dormitory_person;
 	double PersonAtSchool_person;
 	double GreenPlace_mm;
+	double Classroom_num;
 
 	double Carbon_TaiwanTapWater(double TapWater_mmm);
 	double Carbon_TaiwanEletricity(double Eletricity_kwh);
@@ -33,6 +36,8 @@ public:
 	double Carbon_Mortorbike(double MortorBike_person);
 	double Carbon_PersonAtSchool(double PerAtschool_person);
 	double Carbon_GreenPlace(double GreenPlace_mm);
+	double Carbon_Classroom_min(double Classroom_num);
+	double Carbon_People_min(double PersonAtSchool_person);
 };
 
 double carbon_calculate::Carbon_TaiwanTapWater(double TapWater_mmm)
@@ -72,6 +77,15 @@ double carbon_calculate::Carbon_GreenPlace(double GreenPlace_mm)
 {
     return GreenPlace_mm * GreenPlace;
 }
+double carbon_calculate::Carbon_Classroom_min(double Classroom_num)
+{
+	return Classroom_num * Classroom;
+}
+double carbon_calculate::Carbon_People_min(double PersonAtSchool_person)
+{
+	return PersonAtSchool_person*Peoplemin;
+}
+
 
 
 int main()
@@ -138,11 +152,18 @@ int main()
         cin >> Ccal.GreenPlace_mm;
         CarbonSum += Ccal.Carbon_GreenPlace(Ccal.GreenPlace_mm);
         system("cls");
+        
+        cout << "\x1B[33mcarbon footpoint calculator\x1b[0m" << endl << endl;
+        cout << "\x1B[36m教室數量(有人):";
+        cin >> Ccal.Classroom_num;
+        int Carbonmin = Ccal.Carbon_Classroom_min(Ccal.Classroom_num) ;
+        system("cls");
+        Carbonmin += Ccal.Carbon_People_min(Ccal.PersonAtSchool) ;
 
         
         cout << "\x1B[33mcarbon footpoint calculator\x1b[0m" << endl << endl;
         cout << "\x1B[32m總碳足跡是:" << CarbonSum << "Kg\x1b[0m" << endl << endl;
-
+		cout << "\x1B[32m最佳理想碳足跡(只開燈 吃飯 喝水):" << Carbonmin << "Kg\x1b[0m" << endl << endl;
         cout << "\x1B[31m-y again\t-n close\t-d show detail:";
         cin >> EndControl;
 
@@ -160,7 +181,7 @@ int main()
             cout << "\x1B[36m住宿人數:" << Ccal.Dormitory_person << "*" << Ccal.Dormitory << "=" << Ccal.Carbon_dormitory(Ccal.Dormitory_person) << endl;
             cout << "\x1B[36綠地吸碳量" << Ccal.GreenPlace_mm << "*" << Ccal.GreenPlace << "=" << Ccal.Carbon_GreenPlace(Ccal.GreenPlace_mm) << endl;
             cout << "\x1B[32m總碳足跡是:" << CarbonSum << "Kg" << endl;
-
+			cout << "\x1B[32m最佳理想碳足跡(只開燈 吃飯 喝水):" << Carbonmin << "Kg\x1b[0m" << endl << endl;
             cout << "\x1B[31m-y again\t-n close:";
             cin >> EndControl;
 
