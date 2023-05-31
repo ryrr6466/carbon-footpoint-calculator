@@ -1,3 +1,3 @@
 # carbon-footpoint-calculator
 
-**V2.0**
+**Release version**
