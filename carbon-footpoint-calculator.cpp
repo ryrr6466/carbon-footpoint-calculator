@@ -15,7 +15,7 @@ public:
     const double MortorBike = 0.150 * 30; //every person 
     const double PersonAtSchool = 19.6 / 24 * 10 * 25 / 6 * 1.5 / 2 / 1.75;//every person
     const double GreenPlace = -(1.15 / 365 * 30);
-    const double Classroom = 0.2 * 25 * 24;
+    const double Classroom = 0.2 * 25 * 24+225;
     const double Peoplemin = 3.4;//only food and water
 
     double TapWater_mmm;
@@ -181,7 +181,7 @@ int main()
             cout << "\x1B[36m住宿人數:" << Ccal.Dormitory_person << "*" << Ccal.Dormitory << "=" << Ccal.Carbon_dormitory(Ccal.Dormitory_person) << endl;
             cout << "\x1B[36綠地吸碳量" << Ccal.GreenPlace_mm << "*" << Ccal.GreenPlace << "=" << Ccal.Carbon_GreenPlace(Ccal.GreenPlace_mm) << endl;
             cout << "\x1B[32m總碳足跡是:" << CarbonSum << "Kg" << endl;
-            cout << "\x1B[32m最佳理想碳足跡(只開燈 吃飯 喝水):" << Carbonmin << "Kg\x1b[0m" << endl << endl;
+            cout << "\x1B[32m最佳理想碳足跡:" << Carbonmin << "Kg\x1b[0m" << endl << endl;
             cout << "\x1B[31m-y again\t-n close:";
             cin >> EndControl;
 
