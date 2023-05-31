@@ -95,7 +95,7 @@ int main()
     char EndControl;
 
     carbon_calculate Ccal; //class: carbon_calculate
-    //class : clear
+    
 
     cout << "carbon footpoint calculator" << endl << endl;
     cout << "welcome to the carbon foootpoint calculator" << endl << endl;
