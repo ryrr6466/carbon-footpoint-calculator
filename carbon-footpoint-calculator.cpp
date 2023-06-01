@@ -13,9 +13,9 @@ public:
     const double Bus = 1.26 * 30;// (diesel) every km
     const double Dormitory = 15.02 * 10; // every person
     const double MortorBike = 0.150 * 30; //every person 
-    const double PersonAtSchool = 19.6 / 24 * 10 * 25 / 6 * 1.5 / 2 / 1.75;//every person
+    const double PersonAtSchool = 15.06;//every person
     const double GreenPlace = -(1.15 / 365 * 30);
-    const double Classroom = 0.2 * 25 * 24+225;
+    const double Classroom = 0.2 * 25 * 24;
     const double Peoplemin = 3.4;//only food and water
 
     double TapWater_mmm;
@@ -159,11 +159,19 @@ int main()
         int Carbonmin = Ccal.Carbon_Classroom_min(Ccal.Classroom_num);
         system("cls");
         Carbonmin += Ccal.Carbon_People_min(Ccal.PersonAtSchool);
-
+        
+        cout << "\x1B[33mcarbon footpoint calculator\x1b[0m" << endl << endl;
+        cout << "\x1B[36m必須要開冷氣才活得下去嗎(T/F):";
+        char TF;//true or false
+        cin>>TF;
+        if(TF=='T'){
+        	Carbonmin+=Ccal.PersonAtSchool*225;
+		}
+        system("cls");
 
         cout << "\x1B[33mcarbon footpoint calculator\x1b[0m" << endl << endl;
         cout << "\x1B[32m總碳足跡是:" << CarbonSum << "Kg\x1b[0m" << endl << endl;
-        cout << "\x1B[32m最佳理想碳足跡(只開燈 吃飯 喝水):" << Carbonmin << "Kg\x1b[0m" << endl << endl;
+        cout << "\x1B[32m最佳理想碳足跡(只吃飯 喝水):" << Carbonmin << "Kg\x1b[0m" << endl << endl;
         cout << "\x1B[31m-y again\t-n close\t-d show detail:";
         cin >> EndControl;
 
