@@ -165,7 +165,7 @@ int main()
         char TF;//true or false
         cin>>TF;
         if(TF=='T'){
-        	Carbonmin+=Ccal.PersonAtSchool*225;
+        	Carbonmin+=Ccal.PersonAtSchool*225*3;
 		}
         system("cls");
 
